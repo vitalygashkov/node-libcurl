@@ -167,7 +167,7 @@ export class requests {
     };
 
     constructor(option: requestsInitOption = {}) {
-        this.defaultRequestsHeaderMap = new Map();
+        this.defaultRequestsHeaderMap = new Headers();
         this.option = { ...option };
         const {
             cookies,
@@ -319,7 +319,7 @@ export class requests {
             );
         }
         curl.open(method, url_);
-        if (this.defaultRequestsHeaderMap.size) {
+        if (Array.from(this.defaultRequestsHeaderMap.entries()).length) {
             curl.setRequestHeaders(this.defaultRequestsHeaderMap);
         }
         if (headers) {
