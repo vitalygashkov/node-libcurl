@@ -5,6 +5,7 @@
     "name": "Ossian"
   },
   "scripts": {
+    "prepare": "tsc -p tsconfig.json",
     "test": "node ./test/libcurl_test.js",
     "gyp-rebuild": "node-gyp rebuild",
     "unittest": "mocha",
